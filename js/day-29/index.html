@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaTech Employee Dashboard</title>
+  <style>
+    /* ============================================
+       NovaTech Employee Dashboard — Styles
+       ============================================ */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    /* --- Header --- */
+    .header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: white;
+      padding: 24px 32px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+    }
+
+    .header p {
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    /* --- Controls --- */
+    .controls {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    #search-input {
+      flex: 1;
+      min-width: 250px;
+      padding: 10px 16px;
+      font-size: 1rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    #search-input:focus {
+      border-color: #4a90d9;
+    }
+
+    #filter-favorites {
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    #filter-favorites:hover {
+      border-color: #f5a623;
+    }
+
+    #filter-favorites.active {
+      background: #f5a623;
+      border-color: #f5a623;
+      color: white;
+    }
+
+    #employee-count {
+      font-size: 0.9rem;
+      color: #888;
+      margin-left: auto;
+    }
+
+    /* --- Employee Grid --- */
+    #employee-list {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    /* --- Employee Card --- */
+    .employee-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+
+    .employee-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .employee-card.favorite {
+      border: 2px solid #f5a623;
+    }
+
+    .employee-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      color: #1a1a2e;
+    }
+
+    .employee-card p {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: #555;
+    }
+
+    .fav-btn {
+      margin-top: 12px;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fafafa;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .fav-btn:hover {
+      background: #fff3dc;
+      border-color: #f5a623;
+    }
+
+    /* --- Status Messages --- */
+    #status-message {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #888;
+    }
+
+    .error-message {
+      color: #e74c3c !important;
+      background: #fdf0ef;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>NovaTech Employee Dashboard</h1>
+    <p>Capstone Project — Day 29</p>
+  </div>
+
+  <!-- Search & Filter Controls -->
+  <div class="controls">
+    <input
+      type="text"
+      id="search-input"
+      placeholder="Search by name, email, company, or city..."
+    >
+    <button id="filter-favorites">Show Favorites</button>
+    <span id="employee-count"></span>
+  </div>
+
+  <!-- Status Messages (loading, errors, empty results) -->
+  <div id="status-message"></div>
+
+  <!-- Employee Cards Grid -->
+  <div id="employee-list"></div>
+
+  <!--
+    Link your JavaScript file here.
+    Use exercises.js while building, switch to solutions.js to compare.
+  -->
+  <script src="exercises.js"></script>
+
+</body>
+</html>
