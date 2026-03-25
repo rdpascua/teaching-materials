@@ -13,6 +13,7 @@
 ## The Story Arc
 
 ```
+Day 00       PROLOGUE           10-min briefer — JS history & setup
 Days 01–07   THE VILLAGE        Learn the basics, earn your first blade
 Days 08–14   THE FOREST         Harder creatures, sharper tools
 Days 15–21   THE DUNGEON        Face the browser, conquer async dragons
